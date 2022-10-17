@@ -17,11 +17,21 @@ public class A1_DataBaseConnection {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM USER");
 
             //4. Recorrer el resultado.
+            int edad;
+            String nombre;
+            Date fechaNacimiento;
             while (resultSet.next()){
-                System.out.println(resultSet.getString("ID_USUARIO")+ " "+resultSet.getString("NOMBRE"));
+                nombre = resultSet.getString("NOMBRE");//Se puede acceder através del nombre o número de la columna en la tabla DB.
+                edad = resultSet.getInt("EDAD");//El tipo de dato depende del tipo de dato en DB, siendo genérico String.
+                fechaNacimiento = resultSet.getDate("NACIMIENTO");
+                System.out.println(resultSet.getString("ID_USUARIO")+ " Nombre:"+ nombre+ "\tEdad: "+ edad+"\tNacimiento:\t"+ fechaNacimiento);
             }
+
+            resultSet.close();
+            statement.close();
+            coneccion.close();
         } catch (SQLException e) {
-            System.out.println("Problemas con conexión a la base de datos");
+            System.out.println("\nProblemas con conexión a la base de datos\n");
             e.printStackTrace();
         }
     }
