@@ -1,8 +1,5 @@
 package R_DataBase;
 
-import com.sun.security.jgss.GSSUtil;
-
-import javax.print.DocFlavor;
 import java.sql.*;
 
 public class H1_Metadatos {

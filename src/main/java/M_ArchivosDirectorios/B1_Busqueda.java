@@ -33,12 +33,12 @@ public class B1_Busqueda {
 }
 
 class Filtro implements FilenameFilter {
-    String objetivo = "folder1";//Objetivo busqueda.
+    String objetivo = "folder";//Objetivo busqueda.
 
 
     //Método sobrescrito que es llamdado cada archivo dentro de la ruta especificada del objeto File.
     @Override
     public boolean accept(File dir, String name) {
-        return name.equals(objetivo);
+        return name.contains(objetivo);
     }
 }

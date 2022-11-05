@@ -1,8 +1,10 @@
 package K_Ficheros;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 
 public class A1_LeyendoReader {
     public static void main(String[] args) {
